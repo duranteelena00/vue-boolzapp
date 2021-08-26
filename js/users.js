@@ -2,6 +2,7 @@ const user = {
   name: 'Nome Utente',
   avatar: '_io',
 };
+
 const contacts = [
   {
     name: 'Michele',

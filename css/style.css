@@ -1,3 +1,8 @@
+/* Milestone 1:
+Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) e dall’interlocutore (bianco) assegnando due classi CSS diverse
+Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto. */
+
+/* All */
 * {
   margin: 0;
   padding: 0;
@@ -6,12 +11,23 @@
 
 html,
 body {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   overflow-x: hidden;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
 }
 
+img {
+  width: 50px;
+  height: 50px;
+}
+
+i {
+  color: #b1b1b1;
+}
+
+/* background */
 .background {
   width: 100vw;
   height: 100vh;
@@ -29,7 +45,8 @@ body {
   height: calc(100% - 100px);
 }
 
-.container {
+/* content */
+.container-lg {
   padding: 0;
   height: 95%;
   background: white;
@@ -46,35 +63,66 @@ body {
   display: flex;
 }
 
+/* SIDEBAR */
 .sidebar {
   width: 35%;
   height: 100%;
+  border-right: 1px solid #b2b1b8;
 }
 
-header {
+.sidebar > header {
   width: 100%;
 }
 
-.sidebar > header > nav {
-  height: 50px;
+.card,
+.alert {
+  border-radius: 0%;
+  line-height: 13px;
+  border: none;
+}
+
+header > .card {
   background-color: #ebebea;
+  height: 60px;
+}
+
+header > .card img.icon {
+  color: #b1b1b1;
+  height: 20px;
+  width: auto;
 }
 
 .sidebar > header > .alert {
   height: 65px;
   background-color: #8fdbfc;
+  font-size: 12px;
 }
 
 .sidebar > header > .search-bar {
-  height: 55px;
+  background: #edeeee;
+}
+
+.sidebar > header > .search-bar > * {
+  border: none;
+  background: white;
+}
+
+.sidebar > header > .alert i {
+  color: #8fdbfc;
+  background-color: white;
+  font-size: 15px;
 }
 
 .sidebar > .ul-container {
-  height: calc(100% - 170px);
-  
-  border: 2px solid lightgreen;
+  height: calc(100% - 168.75px);
+  overflow-y: scroll;
 }
 
+.sidebar ul .card {
+  border-bottom: 1px solid #edeeee;
+}
+
+/* MAIN */
 main {
   width: 65%;
   height: 100%;
@@ -82,20 +130,33 @@ main {
 }
 
 main > header {
-  height: 50px;
+  height: 60px;
   background-color: #ebebea;
 }
 
-main > .read {
+main > .chat {
   width: 100%;
-  height: calc(100% - 100px);
-  background-image: url("./img/mine.jpeg");
-
-  border: 2px solid lightgreen;
+  height: calc(100% - 110px);
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
-main > .write-bar {
+main > .chat > img {
+  height: 100%;
+  width: auto;
+}
+
+main .write-bar {
   width: 100%;
   height: 50px;
   background-color: #f2efea;
+}
+
+main .write-bar > div > input {
+  border: none;
+}
+
+main .write-bar > div > span {
+  border: none;
+  background: transparent;
 }
