@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.background {
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  position: relative;
+}
+
+.background > .green {
+  background-color: #039789;
+  height: 100px;
+}
+
+.background > .grey {
+  background-color: #d8ddd5;
+  height: calc(100% - 100px);
+}
+
+.container {
+  padding: 0;
+  height: 95%;
+  background: white;
+  z-index: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.sidebar {
+  width: 35%;
+  height: 100%;
+}
+
+header {
+  width: 100%;
+}
+
+.sidebar > header > nav {
+  height: 50px;
+  background-color: #ebebea;
+}
+
+.sidebar > header > .alert {
+  height: 65px;
+  background-color: #8fdbfc;
+}
+
+.sidebar > header > .search-bar {
+  height: 55px;
+}
+
+.sidebar > .ul-container {
+  height: calc(100% - 170px);
+  
+  border: 2px solid lightgreen;
+}
+
+main {
+  width: 65%;
+  height: 100%;
+  position: relative;
+}
+
+main > header {
+  height: 50px;
+  background-color: #ebebea;
+}
+
+main > .read {
+  width: 100%;
+  height: calc(100% - 100px);
+  background-image: url("./img/mine.jpeg");
+
+  border: 2px solid lightgreen;
+}
+
+main > .write-bar {
+  width: 100%;
+  height: 50px;
+  background-color: #f2efea;
+}
