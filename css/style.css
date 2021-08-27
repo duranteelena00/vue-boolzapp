@@ -48,7 +48,8 @@ i {
 /* content */
 .container-lg {
   padding: 0;
-  height: 95%;
+  max-width: 1100px;
+  height: 90%;
   background: white;
   z-index: 0;
   position: absolute;
@@ -86,6 +87,14 @@ header > .card {
   height: 60px;
 }
 
+.card > div:first-of-type {
+  flex-grow: 1;
+}
+
+.sidebar .card > div:nth-of-type(2) {
+  width: fit-content;
+}
+
 header > .card img.icon {
   color: #b1b1b1;
   height: 20px;
@@ -96,6 +105,14 @@ header > .card img.icon {
   height: 65px;
   background-color: #8fdbfc;
   font-size: 12px;
+}
+
+.sidebar > header > .alert > div:first-of-type {
+  width: fit-content;
+}
+
+.sidebar > header > .alert > div:nth-of-type(2) {
+  flex-grow: 1;
 }
 
 .sidebar > header > .search-bar {
@@ -127,7 +144,6 @@ main {
   width: 65%;
   height: 100%;
   position: relative;
-  background-image: url(../img/mine.jpg);
 }
 
 main > header {
@@ -135,9 +151,14 @@ main > header {
   background-color: #ebebea;
 }
 
+main > header.card > div:nth-of-type(2) {
+  width: fit-content;
+}
+
 main > .chat {
   width: 100%;
   height: calc(100% - 110px);
+  background-image: url(../img/mine.jpg);
   overflow-y: scroll;
   overflow-x: hidden;
 }

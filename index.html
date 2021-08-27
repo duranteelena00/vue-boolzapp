@@ -19,12 +19,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./css/style.css" />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.6/vue.cjs.js"
-      integrity="sha512-2e2aXOh4/FgkCAUyurkjk0Uw4m1gPcExFwb1Ai4Ajjg97se/FEWfrLG1na4mq8cgOzouc8qLIqsh0EGksPGdqQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
   </head>
   <body>
     <!-- background -->
@@ -38,30 +33,21 @@
         <!-- SIDEBAR -->
         <nav class="sidebar">
           <header>
-            <!-- User Info -->
-            <div class="card m-0 px-1">
-              <div
-                class="
-                  row
-                  g-0
-                  pt-2
-                  d-flex
-                  justify-content-between
-                  align-items-center
-                "
-              >
-                <div class="col-10">
+            <!-- header Card -->
+            <div class="card m-0 px-1 d-flex flex-row align-items-center">
+              <div>
+                <figure class="d-inline">
                   <img
                     src="./img/avatar_io.jpg"
                     class="img rounded-circle mx-1"
                   />
-                  <h6 class="card-title d-inline m-=">Nome Utente</h6>
-                </div>
-                <div class="col-2 d-flex justify-content-end pe-3">
-                  <i class="fas fa-circle-notch fs-5 mx-2"></i>
-                  <img src="./img/comment_icon.png" class="icon mx-2" />
-                  <i class="fas fa-ellipsis-v fs-5 mx-2"></i>
-                </div>
+                </figure>
+                <div class="card-title h6 d-inline m-0">Nome Utente</div>
+              </div>
+              <div class="d-flex justify-content-end pe-3">
+                <i class="fas fa-circle-notch fs-5 mx-2"></i>
+                <img src="./img/comment_icon.png" class="icon mx-2" />
+                <i class="fas fa-ellipsis-v fs-5 mx-2"></i>
               </div>
             </div>
             <!-- Alert -->
@@ -69,8 +55,6 @@
               class="
                 alert
                 m-0
-                row
-                g-0
                 p-2
                 d-flex
                 justify-content-between
@@ -78,10 +62,10 @@
               "
               role="alert"
             >
-              <div class="col-2">
+              <div class="me-2">
                 <i class="fas fa-bell-slash rounded-circle p-3"></i>
               </div>
-              <div class="col-10 pt-2 ps-2">
+              <div class="pt-2 ps-2">
                 <p class="m-0 pb-1">Ricevi notifiche di nuovi messaggi</p>
                 <p class="m-0 pb-1">
                   <small>
@@ -108,82 +92,51 @@
           <div class="ul-container">
             <!--vue-->
             <ul class="list-unstyled">
-              <li>
-                <div class="card m-0 px-3 py-2">
-                  <div
-                    class="
-                      row
-                      g-0
-                      d-flex
-                      justify-content-between
-                      align-items-center
-                    "
-                  >
-                    <div class="col-10">
-                      <img
-                        src="./img/avatar_1.jpg"
-                        class="img rounded-circle me-1"
-                      />
-                      <h6 class="card-title d-inline m-0">Michele</h6>
-                    </div>
-                  </div>
+              <li class="card m-0 px-3 py-2 d-flex flex-row align-items-center">
+                <div>
+                  <figure class="d-inline">
+                    <img
+                      src="./img/avatar_1.jpg"
+                      class="img rounded-circle mx-1"
+                    />
+                  </figure>
+                  <div class="card-title h6 d-inline m-0">Michele</div>
                 </div>
-                <div class="card m-0 px-3 py-2">
-                  <div
-                    class="
-                      row
-                      g-0
-                      d-flex
-                      justify-content-between
-                      align-items-center
-                    "
-                  >
-                    <div class="col-10">
-                      <img
-                        src="./img/avatar_2.jpg"
-                        class="img rounded-circle me-1"
-                      />
-                      <h6 class="card-title d-inline m-0">Fabio</h6>
-                    </div>
-                  </div>
+              </li>
+              
+              <li class="card m-0 px-3 py-2 d-flex flex-row align-items-center">
+                <div>
+                  <figure class="d-inline">
+                    <img
+                      src="./img/avatar_2.jpg"
+                      class="img rounded-circle mx-1"
+                    />
+                  </figure>
+                  <div class="card-title h6 d-inline m-0">Fabio</div>
                 </div>
-                <div class="card m-0 px-3 py-2">
-                  <div
-                    class="
-                      row
-                      g-0
-                      d-flex
-                      justify-content-between
-                      align-items-center
-                    "
-                  >
-                    <div class="col-10">
-                      <img
-                        src="./img/avatar_3.jpg"
-                        class="img rounded-circle me-1"
-                      />
-                      <h6 class="card-title d-inline m-0">Samuele</h6>
-                    </div>
-                  </div>
+              </li>
+
+              <li class="card m-0 px-3 py-2 d-flex flex-row align-items-center">
+                <div>
+                  <figure class="d-inline">
+                    <img
+                      src="./img/avatar_3.jpg"
+                      class="img rounded-circle mx-1"
+                    />
+                  </figure>
+                  <div class="card-title h6 d-inline m-0">Samuele</div>
                 </div>
-                <div class="card m-0 px-3 py-2">
-                  <div
-                    class="
-                      row
-                      g-0
-                      d-flex
-                      justify-content-between
-                      align-items-center
-                    "
-                  >
-                    <div class="col-10">
-                      <img
-                        src="./img/avatar_6.jpg"
-                        class="img rounded-circle me-1"
-                      />
-                      <h6 class="card-title d-inline m-0">Luisa</h6>
-                    </div>
-                  </div>
+              </li>
+
+              <li class="card m-0 px-3 py-2 d-flex flex-row align-items-center">
+                <div>
+                  <figure class="d-inline">
+                    <img
+                      src="./img/avatar_6.jpg"
+                      class="img rounded-circle mx-1"
+                    />
+                  </figure>
+                  <div class="card-title h6 d-inline m-0">Luisa</div>
                 </div>
               </li>
             </ul>
@@ -193,40 +146,25 @@
 
         <!-- MAIN -->
         <main>
-          <header>
-            <div class="card">
-              <div
-                class="
-                  row
-                  g-0
-                  pt-1
-                  d-flex
-                  justify-content-between
-                  align-items-center
-                "
-              >
-                <div class="col-1">
-                  <img
-                    src="./img/avatar_1.jpg"
-                    class="img rounded-circle ms-2"
-                  />
-                </div>
-                <div class="col-8">
-                  <h6 class="card-title m-0 py-1">Michele</h6>
-                  <p class="card-text m-0">
-                    <small class="text-muted">Ultimo accesso oggi alle</small>
-                  </p>
-                </div>
-                <div class="col-2 d-flex justify-content-end pt-2 pe-3">
-                  <i class="fas fa-search fs-5 mx-2"></i>
-                  <i class="fas fa-paperclip fs-5 mx-2"></i>
-                  <i class="fas fa-ellipsis-v fs-5 mx-2"></i>
-                </div>
+          <header class="card m-0 px-1 d-flex flex-row align-items-center">
+            <div class="d-flex align-items-center">
+              <figure class="mx-3 my-2">
+                <img src="./img/avatar_1.jpg" class="img rounded-circle" />
+              </figure>
+              <div class="">
+                <h6 class="card-title m-0 py-1">Michele</h6>
+                <p class="card-text m-0">
+                  <small class="text-muted">Ultimo accesso oggi alle</small>
+                </p>
               </div>
             </div>
+            <div class="d-flex justify-content-end pt-2 pe-3">
+              <i class="fas fa-search fs-5 mx-2"></i>
+              <i class="fas fa-paperclip fs-5 mx-2"></i>
+              <i class="fas fa-ellipsis-v fs-5 mx-2"></i>
+            </div>
           </header>
-          <div class="chat">
-          </div>
+          <div class="chat"></div>
           <div class="write-bar">
             <div class="input-group input-group-lg p-2">
               <span class="input-group-text"><i class="far fa-smile"></i></span>
