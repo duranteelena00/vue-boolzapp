@@ -15,7 +15,7 @@ body {
 
 /* Utilities */
 .active {
-  background: #E9EBEB
+  background: #e9ebeb;
 }
 
 img.icon {
@@ -89,7 +89,7 @@ i {
   border: none;
 }
 
-header > .card, 
+header > .card,
 header.card {
   background-color: #ebebea;
   height: 60px;
@@ -125,6 +125,7 @@ header.card {
 
 .sidebar > header > .search-bar {
   background: #edeeee;
+  border-top: 1px solid #dad9dd;
   border-bottom: 1px solid #dad9dd;
 }
 
@@ -142,7 +143,27 @@ header.card {
   border-bottom: 1px solid #edeeee;
 }
 
-/* MAIN */
+/* MAIN (home-screen) */
+main.home-screen > img {
+  width: auto;
+  height: 50%;
+}
+
+main.home-screen > .container-sm > p:first-of-type {
+  color: #626262;
+  line-height: 33px;
+}
+
+main.home-screen > .container-sm > p:nth-of-type(2),
+main.home-screen > .container-sm > p:nth-of-type(3) {
+  color: #898889;
+}
+
+main.home-screen > .container-sm > p:nth-of-type(3) > a {
+  color: #0aa545;
+}
+
+/* MAIN (if active contacs) */
 main {
   width: 65%;
   height: 100%;
@@ -192,12 +213,12 @@ main > .chat-container > img {
 
 .message.sent {
   align-self: flex-end;
-  background: #D4F9BB;
+  background: #d4f9bb;
   border-radius: 7.5px 0 7.5px 7.5px;
 }
 
 .message.sent > i {
-  color: #D4F9BB;
+  color: #d4f9bb;
   right: -5.5px;
   top: -7px;
 }
@@ -220,3 +241,9 @@ main .write-bar > div a {
   border: none;
   background: transparent;
 }
+
+main.home-screen > .img-container {
+  height: 55%;
+  flex: 1;
+}
+

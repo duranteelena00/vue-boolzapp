@@ -153,7 +153,4 @@ const app = new Vue({
       return moment(stringDate, 'DD/MM/YYYY HH:mm:ss').format('HH:mm')
     },
   },
-  mounted() {
-    this.activeContact = this.contacts[0];
-  },
 });
