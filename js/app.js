@@ -126,9 +126,8 @@ const app = new Vue({
       visible: true,
       messages: [],
     },
-    text: "",
     userMessage: {
-      date: "28/03/2020 17:10:37",
+      date: "",
       text: "",
       status: "sent",
     },
@@ -138,6 +137,7 @@ const app = new Vue({
       status: "received",
     },
     currentDate: new Date(),
+    displayAlert: true
   },
   methods: {
     onClickedContact(clickedContact) {
@@ -152,5 +152,8 @@ const app = new Vue({
     formatTime(stringDate) {
       return moment(stringDate, 'DD/MM/YYYY HH:mm:ss').format('HH:mm')
     },
+    closeAlert(){
+      this.displayAlert = false
+    }
   },
 });

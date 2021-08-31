@@ -63,12 +63,12 @@
                 justify-content-between
                 align-items-center
               "
-              role="alert"
+              role="alert" v-if="displayAlert"
             >
               <div class="me-2">
                 <i class="fas fa-bell-slash rounded-circle p-3"></i>
               </div>
-              <div class="pt-2 ps-2  d-none d-md-block">
+              <div class="pt-2 ps-2">
                 <p class="m-0 pb-1">Ricevi notifiche di nuovi messaggi</p>
                 <p class="m-0 pb-1">
                   <small>
@@ -78,9 +78,9 @@
                   </small>
                 </p>
               </div>
-              <!-- <a href="#" class="position-absolute top-0 end-0 p-2">
+               <a href="#" class="close-button position-absolute top-0 end-0 p-2" v-on:click="closeAlert">
                 <i class="fas fa-times"></i>
-              </a> -->
+              </a> 
             </div>
             <!-- header Search-bar -->
             <div class="search-bar input-group h-50 m-0 p-2">
@@ -123,16 +123,18 @@
         </nav>
         <!-- MAIN (home-screen) -->
         <main class="home-screen bg-light d-flex flex-column justify-content-center align-items-center" v-if="!activeContact.name">
-          <img src="./img/whatsapp-web_img.png" class="mb-4">
-          <div class="container-sm w-75 text-center">
-            <p class="fs-2">
+          <div class="img-container py-4">
+            <img src="./img/whatsapp-web_img.png">
+          </div>
+          <div class="container-md w-75 text-center">
+            <p class="fs-2 m-0 pb-2">
               Mantieni il telefono connesso
             </p>
-            <p class="pb-4">
+            <p class="pb-2">
               Whatsapp si collega al tuo telefono per sincronizzare i messaggi. Per ridurre l'utilizzo dei dati, collega il telefono al Wi-Fi.
             </p>
-            <hr class="w-50 mx-auto">
-            <p><i class="fas fa-laptop me-2 pt-4"></i>Whatsapp è disponibile per Windows. <a>Scaricala qui</a>.</p>
+            <hr class="d-none d-md-block w-50 mx-auto my-5">
+            <p class="py-1"><i class="fas fa-laptop me-2"></i>Whatsapp è disponibile per Windows. <a>Scaricala qui</a>.</p>
           </div>
         </main>
         <!-- MAIN (if active contacs) -->
@@ -178,8 +180,8 @@
               >
                 <i class="fas fa-caret-down"></i>
                 <p class="m-0 pt-2 pb-1 pe-4">{{ message.text }}</p>
-                <small class="date text-muted align-self-end pe-2" v-if="message.date">{{ formatTime(message.date) }}</small>
-                <small v-else>
+                <small class="text-muted align-self-end pe-2" v-if="message.date">{{ formatTime(message.date) }}</small>
+                <small class="text-muted align-self-end pe-2" v-else>
                   {{ formatTime(currentDate) }}
                 </small>
                 <!-- <a href="#" class="position-absolute top-0 end-0 m-0 p-0">
@@ -218,3 +220,18 @@
     <script src="./js/app.js"></script>
   </body>
 </html>
+
+
+
+<!-- <li
+            class="list-group-item d-flex justify-content-between"
+            v-for="(contact, index) in contacts"
+          >
+            {{contact}}
+            <button type="button" class="btn-close" v-on:click="deleteContact(index)"></button>
+          </li> -->
+
+
+        <!--   deleteAlert{
+            this.splice(index, 1)
+        }, -->

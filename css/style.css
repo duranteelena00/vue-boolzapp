@@ -14,14 +14,18 @@ body {
 }
 
 /* Utilities */
-.active {
-  background: #e9ebeb;
-}
-
 img.icon {
   color: #b1b1b1;
   width: auto;
   height: 20px;
+}
+
+.active {
+  background: #e9ebeb;
+}
+
+.hidden {
+  display: none;
 }
 
 /* All */
@@ -113,9 +117,15 @@ header.card {
   width: fit-content;
 }
 
-.sidebar > header > .alert i {
+.sidebar > header > .alert > div:first-of-type > i {
   color: #8fdbfc;
   background-color: white;
+  font-size: 15px;
+}
+
+.alert .close-button {
+  color: #b1b1b1;
+  border: none;
   font-size: 15px;
 }
 
@@ -144,22 +154,30 @@ header.card {
 }
 
 /* MAIN (home-screen) */
-main.home-screen > img {
+main.home-screen > .img-container {
+  height: 55%;
+}
+
+main.home-screen > .img-container > img {
   width: auto;
-  height: 50%;
+  height: 100%;
 }
 
-main.home-screen > .container-sm > p:first-of-type {
+main.home-screen > .container-md {
+  height: 45%;
+}
+
+main.home-screen > .container-md > p:first-of-type {
   color: #626262;
-  line-height: 33px;
+  line-height: 31px;
 }
 
-main.home-screen > .container-sm > p:nth-of-type(2),
-main.home-screen > .container-sm > p:nth-of-type(3) {
+main.home-screen > .container-md > p:nth-of-type(2),
+main.home-screen > .container-md > p:nth-of-type(3) {
   color: #898889;
 }
 
-main.home-screen > .container-sm > p:nth-of-type(3) > a {
+main.home-screen > .container-md > p:nth-of-type(3) > a {
   color: #0aa545;
 }
 
@@ -246,4 +264,3 @@ main.home-screen > .img-container {
   height: 55%;
   flex: 1;
 }
-
