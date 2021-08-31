@@ -22,8 +22,10 @@
     />
     <!-- my css -->
     <link rel="stylesheet" href="./css/style.css" />
-    <!-- vue cdn -->
+    <!-- vue.js cdn -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <!-- moment.js cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>   
   </head>
   <body>
     <!-- background -->
@@ -49,10 +51,16 @@
                 <div class="card-title h6 d-inline m-0">{{ user.name }}</div>
               </div>
               <div class="d-flex justify-content-end pe-3">
+                <a href="#">
                 <i class="fas fa-circle-notch fs-5 mx-2"></i>
-                <img src="./img/comment_icon.png" class="icon mx-2" />
-                <i class="fas fa-ellipsis-v fs-5 mx-2"></i>
-              </div>
+                </a>
+                <a href="#">
+                  <img src="./img/comment_icon.png" class="icon mx-2" />
+                </a>
+                <a href="#">
+                  <i class="fas fa-ellipsis-v fs-5 mx-2"></i>
+                </div>
+                </a>
             </div>
             <!-- header Alert -->
             <div
@@ -101,17 +109,19 @@
                 :key="contact.id"
                 @click="onClickedContact(contact)"
                 :class="
-                { active: contact === activeContact}"
+                { active: contact === activeContact }"
               >
-                <figure class="d-inline">
+                <figure class="d-flex align-items-center m-0">
                   <img
                     class="img rounded-circle mx-1"
                     :src="'./img/avatar' + contact.avatar + '.jpg'"
                   />
                 </figure>
-                <div class="">
+                <div class="ps-3 d-flex align-items-center">
                   <h6 class="card-title m-0 py-1">{{ contact.name }}</h6>
-                  <p class="card-text m-0"></p>
+                  <p class="card-text text-muted m-0">
+                    {{  }}
+                  </p>
                 </div>
               </li>
             </ul>
@@ -132,39 +142,62 @@
                 <h6 class="card-title m-0 py-1">{{ activeContact.name }}</h6>
                 <p class="card-text m-0">
                   <small class="text-muted d-inline"
-                    >Ultimo accesso oggi alle</small
+                    >Ultimo accesso oggi alle {{ formatTime(currentDate) }}</small
                   >
-                  <small class="text-muted d-inline"></small>
                 </p>
               </div>
             </div>
             <div class="d-flex justify-content-end pt-2 pe-3">
-              <i class="fas fa-search fs-5 mx-2"></i>
-              <i class="fas fa-paperclip fs-5 mx-2"></i>
-              <i class="fas fa-ellipsis-v fs-5 mx-2"></i>
+              <a href="#">
+                <i class="fas fa-search fs-5 mx-2"></i>
+              </a>
+              <a href="#">
+                <i class="fas fa-paperclip fs-5 mx-2"></i>
+              </a>
+              <a href="#">
+                <i class="fas fa-ellipsis-v fs-5 mx-2"></i>
+              </a>
             </div>
           </header>
           <!-- Chat Section -->
           <section class="chat-container px-4 py-3">
             <div class="chat d-flex flex-column">
               <div
-                class="message px-3 py-2 me-2 my-2"
-                v-for="(message, index) in activeContact.messages" :key="index"
+                class="message ps-3 pt-2 me-2 my-2 d-flex flex-column"
+                v-for="(message, index) in activeContact.messages"
+                :key="index"
                 :class="message.status"
               >
                 <i class="fas fa-caret-down"></i>
-                <p>{{ message.text }}</p>
+                <p class="m-0 pb-1 pe-4">{{ message.text }}</p>
+                <small class="date text-muted align-self-end pe-2" v-if="message.date">{{ formatTime(message.date) }}</small>
+                <small v-else>
+                  {{ formatTime(currentDate) }}
+                </small>
               </div>
             </div>
           </section>
           <!-- Write Bar -->
           <div class="write-bar">
-            <div class="input-group input-group-lg p-2">
-              <span class="input-group-text"><i class="far fa-smile"></i></span>
-              <input type="text" class="form-control rounded-pill mx-1" />
-              <span class="input-group-text"
-                ><i class="fas fa-microphone"></i
-              ></span>
+            <div class="input-group input-group-lg p-2 d-flex align-items-center">
+              <a href="#">
+                <i class="far fa-smile fs-5 mx-2"></i>
+              </a>
+              <input
+                type="userMessage.text"
+                class="form-control rounded-pill mx-2"
+                v-model="text" v-on:keyup.enter="onClickedSendButton"
+              />
+              <a href="#" v-if="text">
+                <img
+                  src="./img/send_icon.png"
+                  class="icon"
+                  @click="onClickedSendButton"
+                />
+              </a>
+              <a href="#" v-else>
+                <i class="fas fa-microphone fs-5  mx-2"></i>
+              </a>
             </div>
           </div>
         </main>

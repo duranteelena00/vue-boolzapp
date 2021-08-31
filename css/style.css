@@ -18,6 +18,12 @@ body {
   background: #E9EBEB
 }
 
+img.icon {
+  color: #b1b1b1;
+  width: auto;
+  height: 20px;
+}
+
 /* All */
 img {
   width: 50px;
@@ -95,12 +101,6 @@ header.card {
 
 .sidebar .card > div:nth-of-type(2) {
   width: fit-content;
-}
-
-.sidebar header > .card img.icon {
-  color: #b1b1b1;
-  height: 20px;
-  width: auto;
 }
 
 .sidebar > header > .alert {
@@ -202,6 +202,10 @@ main > .chat-container > img {
   top: -7px;
 }
 
+.message > .small {
+  color: #b1b1b1;
+}
+
 main .write-bar {
   width: 100%;
   height: 50px;
@@ -212,7 +216,7 @@ main .write-bar > div > input {
   border: none;
 }
 
-main .write-bar > div > span {
+main .write-bar > div a {
   border: none;
   background: transparent;
 }
