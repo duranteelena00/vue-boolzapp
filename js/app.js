@@ -120,40 +120,38 @@ const app = new Vue({
         ],
       },
     ],
+    userText: "",
     activeContact: {
       name: "",
       avatar: "",
       visible: true,
       messages: [],
     },
-    userMessage: {
-      date: "",
-      text: "",
-      status: "sent",
-    },
-    automaticMessage: {
-      date: "",
-      text: "Ok",
-      status: "received",
-    },
     currentDate: new Date(),
-    displayAlert: true
+    displayAlert: true,
   },
   methods: {
     onClickedContact(clickedContact) {
       this.activeContact = clickedContact;
     },
     onClickedSendButton() {
-      this.activeContact.messages.push(this.userMessage);
-      this.activeContact.messages.push(this.automaticMessage);
-      this.userMessage.text = this.text
-      this.text = ''
+      const newMessage = {};
+      newMessage.date = "";
+      newMessage.text = this.userText;
+      newMessage.status = "sent";
+      this.activeContact.messages.push(newMessage);
+      const automaticMessage = {};
+      automaticMessage.date = "";
+      automaticMessage.text = "Ok";
+      automaticMessage.status = "received";
+      this.activeContact.messages.push(automaticMessage);
+      this.userText = "";
     },
     formatTime(stringDate) {
-      return moment(stringDate, 'DD/MM/YYYY HH:mm:ss').format('HH:mm')
+      return moment(stringDate, "DD/MM/YYYY HH:mm:ss").format("HH:mm");
     },
-    closeAlert(){
-      this.displayAlert = false
-    }
+    closeAlert() {
+      this.displayAlert = false;
+    },
   },
 });
