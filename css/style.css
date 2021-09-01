@@ -153,9 +153,13 @@ header.card {
   border-bottom: 1px solid #edeeee;
 }
 
+.sidebar ul .card:hover {
+  background: #e9ebeb;
+}
+
 /* MAIN (home-screen) */
 main.home-screen > .img-container {
-  height: 55%;
+  height: 50%;
 }
 
 main.home-screen > .img-container > img {
@@ -164,7 +168,7 @@ main.home-screen > .img-container > img {
 }
 
 main.home-screen > .container-md {
-  height: 45%;
+  height: 50%;
 }
 
 main.home-screen > .container-md > p:first-of-type {
@@ -205,15 +209,13 @@ main > .chat-container > img {
   width: auto;
 }
 
-.message.received,
-.message.sent {
+.message {
   width: fit-content;
   min-height: fit-content;
   position: relative;
 }
 
-.message.received > i,
-.message.sent > i {
+.message > i {
   font-size: 20px;
   position: absolute;
 }

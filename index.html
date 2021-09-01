@@ -85,12 +85,11 @@
             <!-- header Search-bar -->
             <div class="search-bar input-group h-50 m-0 p-2">
               <span class="input-group-text"
-                ><i class="fas fa-search"></i
-              ></span>
+                ><a href="#"><i class="fas fa-search"></i></a></span>
               <input
                 type="text"
                 class="form-control"
-                placeholder="Cerca o inizia una nuova chat"
+                placeholder="Cerca o inizia una nuova chat" v-model.trim="contactFilter" @keyup="filterContacts"
               />
             </div>
           </header>
@@ -101,6 +100,7 @@
                 class="card m-0 px-3 py-2 d-flex flex-row align-items-center"
                 v-for="contact in contacts"
                 :key="contact.id"
+                v-if="contact.visible"
                 @click="onClickedContact(contact)"
                 :class="
                 { active: contact === activeContact }"
@@ -126,7 +126,7 @@
           <div class="img-container py-4">
             <img src="./img/whatsapp-web_img.png">
           </div>
-          <div class="container-md w-75 text-center">
+          <div class="container-md w-75 text-center justify-content-end">
             <p class="fs-2 m-0 pb-2">
               Mantieni il telefono connesso
             </p>

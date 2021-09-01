@@ -127,6 +127,7 @@ const app = new Vue({
       visible: true,
       messages: [],
     },
+    contactFilter: '',
     currentDate: new Date(),
     displayAlert: true,
   },
@@ -146,6 +147,14 @@ const app = new Vue({
       automaticMessage.status = "received";
       this.activeContact.messages.push(automaticMessage);
       this.userText = "";
+    },
+    filterContacts(){
+      if (!this.contactFilter) return;
+      const filter = this.contactFilter.toLowerCase();
+      this.contacts.forEach((contact) => {
+        const contactName = contact.name.toLowerCase();
+        if (contactName.includes(filter)) contact.visible = true
+      })
     },
     formatTime(stringDate) {
       return moment(stringDate, "DD/MM/YYYY HH:mm:ss").format("HH:mm");
